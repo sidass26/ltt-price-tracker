@@ -1,7 +1,7 @@
 // Configuration
 const CONFIG = {
     // Real API endpoint
-    API_ENDPOINT: 'https://api.headout.com/api/v7/tour-groups/3023/calendar/',
+    API_ENDPOINT: 'https://api.headout.com/api/v7/tour-groups/16818/calendar/',
     
     // Number of days to fetch (7 for 7-day lookahead)
     DAYS_AHEAD: 7,
