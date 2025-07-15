@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Widget Embedding Examples</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #1f2937;
+        }
+        .example {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px dashed #e5e7eb;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+        .code-block {
+            background: #1f2937;
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+        }
+        .preview {
+            margin-top: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .note {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Price Widget Embedding Examples</h1>
+        <p>This page demonstrates different ways to embed the 7-Day Price Lookahead widget in your CMS or website.</p>
+        
+        <div class="note">
+            <strong>Widget URL:</strong> https://bfpbdxhf.manus.space
+        </div>
+
+        <div class="example">
+            <h2>1. Basic iframe Embed (Recommended)</h2>
+            <p>Simple and reliable method that works in most CMS platforms.</p>
+            
+            <div class="code-block">
+&lt;iframe 
+    src="https://bfpbdxhf.manus.space" 
+    width="100%" 
+    height="600" 
+    frameborder="0" 
+    scrolling="auto"
+    style="border: none; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"&gt;
+&lt;/iframe&gt;
+            </div>
+            
+            <div class="preview">
+                <iframe 
+                    src="https://bfpbdxhf.manus.space" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    scrolling="auto"
+                    style="border: none; border-radius: 12px;">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="example">
+            <h2>2. Responsive iframe Container</h2>
+            <p>Maintains aspect ratio and scales properly on all devices.</p>
+            
+            <div class="code-block">
+&lt;div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden;"&gt;
+    &lt;iframe 
+        src="https://bfpbdxhf.manus.space" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;"
+        frameborder="0" 
+        scrolling="auto"&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+            </div>
+            
+            <div class="preview">
+                <div style="position: relative; width: 100%; height: 0; padding-bottom: 75%; overflow: hidden;">
+                    <iframe 
+                        src="https://bfpbdxhf.manus.space" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;"
+                        frameborder="0" 
+                        scrolling="auto">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <h2>3. Fixed Height with Scrolling</h2>
+            <p>Best for sidebars or constrained spaces where height is limited.</p>
+            
+            <div class="code-block">
+&lt;iframe 
+    src="https://bfpbdxhf.manus.space" 
+    width="100%" 
+    height="400" 
+    frameborder="0" 
+    scrolling="yes"
+    style="border: 1px solid #e5e7eb; border-radius: 8px;"&gt;
+&lt;/iframe&gt;
+            </div>
+            
+            <div class="preview">
+                <iframe 
+                    src="https://bfpbdxhf.manus.space" 
+                    width="100%" 
+                    height="400" 
+                    frameborder="0" 
+                    scrolling="yes"
+                    style="border: 1px solid #e5e7eb; border-radius: 8px;">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="example">
+            <h2>4. WordPress Shortcode Style</h2>
+            <p>For WordPress users, you can create a shortcode or use this HTML in text widgets.</p>
+            
+            <div class="code-block">
+&lt;div class="price-widget-container"&gt;
+    &lt;iframe 
+        src="https://bfpbdxhf.manus.space" 
+        width="100%" 
+        height="650" 
+        frameborder="0" 
+        scrolling="auto"
+        loading="lazy"
+        style="border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"&gt;
+        &lt;p&gt;Your browser does not support iframes. &lt;a href="https://bfpbdxhf.manus.space"&gt;View the price widget here&lt;/a&gt;.&lt;/p&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+            </div>
+            
+            <div class="note">
+                <strong>WordPress Note:</strong> Make sure to paste this code in the "Text" or "HTML" editor, not the visual editor.
+            </div>
+        </div>
+
+        <div class="example">
+            <h2>5. Mobile-Optimized Embed</h2>
+            <p>Includes media queries for better mobile experience.</p>
+            
+            <div class="code-block">
+&lt;style&gt;
+.price-widget-responsive {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .price-widget-responsive {
+        height: 800px;
+    }
+}
+&lt;/style&gt;
+
+&lt;iframe 
+    src="https://bfpbdxhf.manus.space" 
+    class="price-widget-responsive"
+    frameborder="0" 
+    scrolling="auto"&gt;
+&lt;/iframe&gt;
+            </div>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Important Notes:</h3>
+            <ul>
+                <li><strong>CMS Compatibility:</strong> Some CMS platforms may strip iframe tags for security. Check your platform's documentation.</li>
+                <li><strong>Height Adjustment:</strong> You may need to adjust the height value based on your specific use case.</li>
+                <li><strong>HTTPS Required:</strong> Ensure your website uses HTTPS to avoid mixed content warnings.</li>
+                <li><strong>Testing:</strong> Always test the embed on different devices and screen sizes.</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <h3>📋 Copy-Paste Ready Code</h3>
+            <p>For quick implementation, copy and paste the "Basic iframe Embed" code above. It works in most situations and provides a good user experience.</p>
+        </div>
+
+        <h2>🔧 Customization Options</h2>
+        <p>You can customize the appearance by modifying these iframe attributes:</p>
+        <ul>
+            <li><strong>width:</strong> "100%", "800px", etc.</li>
+            <li><strong>height:</strong> "600px", "auto", etc.</li>
+            <li><strong>scrolling:</strong> "auto", "yes", "no"</li>
+            <li><strong>style:</strong> Add CSS for borders, shadows, margins</li>
+        </ul>
+
+        <h2>📞 Need Help?</h2>
+        <p>If you're having trouble embedding the widget in your specific CMS, try these steps:</p>
+        <ol>
+            <li>Check if your CMS allows iframe embeds</li>
+            <li>Try pasting the code in HTML/Text mode instead of visual editor</li>
+            <li>Adjust the height if content appears cut off</li>
+            <li>Test on different devices to ensure responsiveness</li>
+        </ol>
+    </div>
+</body>
+</html>
+

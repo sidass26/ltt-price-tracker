@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f8fafc;
+    padding: 8px;
+}
+
+.price-bar-widget {
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 120px;
+}
+
+.loading-state, .error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+    min-height: 120px;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e5e7eb;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-state p, .error-state p {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0;
+}
+
+.error-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.error-state button {
+    margin-top: 12px;
+    padding: 6px 12px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.error-state button:hover {
+    background: #2563eb;
+}
+
+.price-bar-container {
+    padding: 16px;
+}
+
+.price-bar {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.price-bar::-webkit-scrollbar {
+    height: 4px;
+}
+
+.price-bar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.price-bar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.price-bar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.price-item {
+    flex: 0 0 auto;
+    min-width: 120px;
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.price-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+}
+
+.price-item.available {
+    border-color: #10b981;
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+}
+
+.price-item.cheapest {
+    border-color: #3b82f6;
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.price-item.cheapest::before {
+    content: '💰';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #3b82f6;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.price-item.discount-available::after {
+    content: '🏷️';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 12px;
+}
+
+.date-header {
+    margin-bottom: 8px;
+}
+
+.date-day {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
+.date-full {
+    font-size: 10px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.price-display {
+    margin-bottom: 6px;
+}
+
+.price-amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
+.price-currency {
+    font-size: 10px;
+    color: #6b7280;
+}
+
+.availability-status {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.availability-status.available {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.availability-status.unavailable {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.cheapest-indicator {
+    display: none;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.cheapest-text {
+    color: #1e40af;
+    font-weight: 500;
+}
+
+.cheapest-date {
+    color: #1f2937;
+    font-weight: 600;
+    margin: 0 4px;
+}
+
+.cheapest-price {
+    color: #1e40af;
+    font-weight: 700;
+}
+
+.widget-footer {
+    padding: 8px 16px;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.last-updated {
+    font-size: 10px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 4px;
+    }
+    
+    .price-bar-widget {
+        border-radius: 8px;
+        min-height: 140px;
+    }
+    
+    .price-bar-container {
+        padding: 12px;
+    }
+    
+    .price-bar {
+        gap: 6px;
+    }
+    
+    .price-item {
+        min-width: 100px;
+        padding: 10px 6px;
+    }
+    
+    .price-amount {
+        font-size: 14px;
+    }
+    
+    .date-day {
+        font-size: 11px;
+    }
+    
+    .date-full {
+        font-size: 9px;
+    }
+    
+    .cheapest-indicator {
+        display: block;
+    }
+    
+    /* Hide cheapest styling on mobile since we show the indicator */
+    .price-item.cheapest::before {
+        display: none;
+    }
+    
+    .price-item.cheapest {
+        border-color: #10b981;
+        background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+        box-shadow: none;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .price-bar-container {
+        padding: 8px;
+    }
+    
+    .price-item {
+        min-width: 85px;
+        padding: 8px 4px;
+    }
+    
+    .price-amount {
+        font-size: 13px;
+    }
+    
+    .date-day {
+        font-size: 10px;
+    }
+    
+    .cheapest-indicator {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+}
+
+/* Desktop enhancements */
+@media (min-width: 769px) {
+    .price-bar-widget {
+        max-width: 900px;
+    }
+    
+    .price-item {
+        min-width: 140px;
+        padding: 16px 10px;
+    }
+    
+    .price-amount {
+        font-size: 18px;
+    }
+    
+    .date-day {
+        font-size: 13px;
+    }
+    
+    .date-full {
+        font-size: 11px;
+    }
+}
+

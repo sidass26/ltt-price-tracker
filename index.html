@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day Price Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="price-bar-widget">
+        <div class="loading-state" id="loadingState">
+            <div class="spinner"></div>
+            <p>Loading prices...</p>
+        </div>
+        
+        <div class="error-state" id="errorState" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <p>Unable to load price data</p>
+            <button onclick="loadPriceData()">Retry</button>
+        </div>
+        
+        <div class="price-bar-container" id="priceBarContainer" style="display: none;">
+            <div class="price-bar" id="priceBar">
+                <!-- Price items will be dynamically inserted here -->
+            </div>
+            <div class="cheapest-indicator" id="cheapestIndicator">
+                <span class="cheapest-text">Cheapest: </span>
+                <span class="cheapest-date" id="cheapestDate">--</span>
+                <span class="cheapest-price" id="cheapestPrice">--</span>
+            </div>
+        </div>
+        
+        <div class="widget-footer">
+            <p class="last-updated" id="lastUpdated">Last updated: --</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
